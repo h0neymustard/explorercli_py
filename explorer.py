@@ -1,19 +1,6 @@
 import inquirer
 import os
 
-
-def clear():
-    """
-    Just a func founded on internet to clear the terminal according to the right operating system
-    """
-    # for windows
-    if os.name == "nt":
-        os.system("cls")
-    # for mac and linux(here, os.name is 'posix')
-    else:
-        os.system("clear")
-
-
 def explorer() -> str:
     """
     Simple function to select one of several file/folder, In single mode you can navigate easily with up,down, and enter to go in the folder selected
@@ -30,11 +17,16 @@ def explorer() -> str:
     several_mode = False
 
     while True:
+        # for windows
+        if os.name == "nt":
+            os.system("cls")
+        # for mac and linux(here, os.name is 'posix')
+        else:
+            os.system("clear")
 
         # Display of current directory
         wdir = os.getcwd()
 
-        clear()
         print("\n" * 5)
         print(f"→ {wdir}\\")
         choices = []
