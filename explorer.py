@@ -86,7 +86,3 @@ def explorer() -> str:
                     return [os.path.join(wdir, i[2:]) for i in selected]
             else:
                 pass
-
-
-if __name__ == "__main__":
-    print(explorer())
